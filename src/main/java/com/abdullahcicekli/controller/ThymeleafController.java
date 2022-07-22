@@ -27,4 +27,11 @@ public class ThymeleafController {
 
         return "/thymeleaf_file/thymeleaf2";
     }
+
+    @GetMapping("thymeleaf4")
+    public String getModel4(Model model){
+        model.addAttribute("isim","Sueda");
+
+        return "thymeleaf4";
+    }
 }
