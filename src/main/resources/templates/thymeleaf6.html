@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<link rel="stylesheet" th:href="@{/css/style.css}" href="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+
+<table th:class="table">
+    <tr th:each="temp:${productListe}">
+        <td th:text="${temp.id}"></td>
+        <td th:text="${temp.productName}"></td>
+        <td th:text="${temp.productPrice}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
