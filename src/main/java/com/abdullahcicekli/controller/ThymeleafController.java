@@ -4,6 +4,7 @@ import com.abdullahcicekli.dto.ProductDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -65,6 +66,17 @@ public class ThymeleafController {
 
         model.addAttribute("productListe",listem);
         return "thymeleaf6";
+    }
+
+    // PathVariable kullanımı. (url'den değğer alma)
+    @GetMapping({"/thymeleaf7", "/thymeleaf7/{id}"})
+    public String thymeleafObjectList(Model model, @PathVariable(name="id", required = false) Long id){
+        if(id!=null){
+            model.addAttribute("id",id);
+        }else{
+            model.addAttribute("id","id bulunamadı");
+        }
+        return "thymeleaf7";
     }
 
 
